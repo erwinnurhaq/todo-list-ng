@@ -1,0 +1,20 @@
+<section class="container">
+  <app-home-header
+    [isLoading]="isLoading"
+    (onAddActivity)="onAddActivity()"
+  ></app-home-header>
+  <div class="activity-row">
+    <app-section-empty
+      *ngIf="!activities"
+      type="activity"
+      (onClick)="onAddActivity()"
+    ></app-section-empty>
+    <ng-container *ngIf="activities">
+      <app-activity-card
+        *ngFor="let activity of activities.data"
+        [activity]="activity"
+        (onDelete)="onConfirmDelete(activity.id)"
+      ></app-activity-card>
+    </ng-container>
+  </div>
+</section>

@@ -1,1 +1,120 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+}
+
+:root,
+html[data-theme='dark'] {
+  --primary: #4a4a4a;
+  --black: #ffffff;
+  --white: #303030;
+  --grey-bg: #666666;
+  --danger: #ed4c5c;
+  --grey-text: #888888;
+  --soft-black: #f4f4f4;
+  --divider: #575757;
+  --backdrop-dimmer: rgba(0, 0, 0, 0.4);
+  --button-text: #ffffff;
+}
+
+html[data-theme='light'] {
+  --primary: #16abf8;
+  --black: #111111;
+  --white: #ffffff;
+  --grey-bg: #f4f4f4;
+  --danger: #ed4c5c;
+  --grey-text: #888888;
+  --soft-black: #4a4a4a;
+  --divider: #dee2e6;
+  --backdrop-dimmer: rgba(0, 0, 0, 0.4);
+  --button-text: #ffffff;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--grey-bg);
+}
+
+#main {
+  min-height: 100vh;
+}
+
+.container {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 43px 0px 55px 0px;
+  flex-wrap: wrap;
+}
+.content-header .content-header-wrapper {
+  display: flex;
+  align-items: center;
+}
+.content-header .content-header__back-icon,
+.content-header .content-header__edit-icon {
+  background: none;
+  border: none;
+  outline: none;
+}
+.content-header .content-header__back-icon {
+  margin-right: 1rem;
+}
+.content-header .content-header__edit-icon {
+  margin-left: 1rem;
+}
+.content-header .content-header__title-input,
+.content-header .content-header__title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--black);
+}
+.content-header .content-header__title-input {
+  background: none;
+  border: none;
+  outline: none;
+  max-width: 18rem;
+  height: 3.375rem;
+}
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal.show {
+  display: flex;
+}
+.backdrop {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: var(--backdrop-dimmer);
+}

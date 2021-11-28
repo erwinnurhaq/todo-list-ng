@@ -1,0 +1,12 @@
+<div class="content-header">
+  <h1 class="content-header__title" data-cy="activity-title">Activity</h1>
+  <app-common-button
+    color="primary"
+    [dataCy]="'activity-add-button'"
+    [isDisabled]="isLoading"
+    (onClick)="onAddActivityClick()"
+  >
+    <img src="assets/icons/icon-plus.svg" alt="icon-plus" />
+    <p>Tambah</p>
+  </app-common-button>
+</div>

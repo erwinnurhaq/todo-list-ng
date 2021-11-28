@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  baseAPIURL: 'https://todo.api.devcode.gethired.id'
 };

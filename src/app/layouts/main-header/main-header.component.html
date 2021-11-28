@@ -1,0 +1,10 @@
+<header>
+  <div class="container container-main-header" data-cy="header-background">
+    <h2 data-cy="header-title">TO DO LIST APP</h2>
+    <app-toggle-input
+      [id]="'theme-toggle'"
+      [isChecked]="theme === 'light'"
+      (onChange)="toggleTheme($event)"
+    ></app-toggle-input>
+  </div>
+</header>

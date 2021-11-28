@@ -1,0 +1,10 @@
+<div className="toggle">
+  <input
+    class="toggle-input"
+    type="checkbox"
+    id="{{ id }}"
+    [checked]="isChecked"
+    (change)="change($event)"
+  />
+  <label class="toggle-label" for="{{ id }}"> Toggle </label>
+</div>

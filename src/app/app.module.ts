@@ -9,12 +9,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { MainHeaderComponent } from './layouts/main-header/main-header.component';
+import { HomeHeaderComponent } from './layouts/home-header/home-header.component';
+import { HomeActivityCardComponent } from './layouts/home-activity-card/home-activity-card.component';
+import { DetailHeaderComponent } from './layouts/detail-header/detail-header.component';
+import { SectionEmptyComponent } from './layouts/section-empty/section-empty.component';
 import { ToggleInputComponent } from './components/toggle-input/toggle-input.component';
 import { CommonButtonComponent } from './components/common-button/common-button.component';
-import { HomeHeaderComponent } from './layouts/home-header/home-header.component';
-import { DetailHeaderComponent } from './layouts/detail-header/detail-header.component';
-import { ActivityCardComponent } from './layouts/activity-card/activity-card.component';
-import { SectionEmptyComponent } from './layouts/section-empty/section-empty.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,8 @@ import { SectionEmptyComponent } from './layouts/section-empty/section-empty.com
     ToggleInputComponent,
     CommonButtonComponent,
     HomeHeaderComponent,
+    HomeActivityCardComponent,
     DetailHeaderComponent,
-    ActivityCardComponent,
     SectionEmptyComponent,
   ],
   imports: [

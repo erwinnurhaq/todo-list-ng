@@ -4,11 +4,11 @@ import { DateString } from 'src/app/helpers/dateString';
 import { Activity } from 'src/app/models';
 
 @Component({
-  selector: 'app-activity-card',
-  templateUrl: './activity-card.component.html',
-  styleUrls: ['./activity-card.component.scss'],
+  selector: 'app-home-activity-card',
+  templateUrl: './home-activity-card.component.html',
+  styleUrls: ['./home-activity-card.component.scss'],
 })
-export class ActivityCardComponent {
+export class HomeActivityCardComponent {
   @Input() activity: Activity;
   @Output() onDelete = new EventEmitter();
 

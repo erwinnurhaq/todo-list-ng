@@ -10,11 +10,11 @@
       (onClick)="onAddActivity()"
     ></app-section-empty>
     <ng-container *ngIf="activities">
-      <app-activity-card
+      <app-home-activity-card
         *ngFor="let activity of activities.data"
         [activity]="activity"
         (onDelete)="onConfirmDelete(activity.id)"
-      ></app-activity-card>
+      ></app-home-activity-card>
     </ng-container>
   </div>
 </section>

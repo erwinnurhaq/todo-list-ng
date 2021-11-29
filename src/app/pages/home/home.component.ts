@@ -10,8 +10,8 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   activitiesSub: Subscription;
-  activities: ActivityGroup | undefined = undefined;
-  isLoading: boolean = false;
+  activities: ActivityGroup | undefined;
+  isLoading: boolean = true;
 
   constructor(private httpService: HttpService) {}
 
@@ -24,12 +24,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getActivities(): void {
-    this.activitiesSub = this.httpService
-      .getActivities()
-      .subscribe((result) => {
-        console.log(result);
+    this.activitiesSub = this.httpService.getActivities().subscribe({
+      next: (result) => {
         this.activities = result;
-      });
+        this.isLoading = false;
+      },
+      error: (error: any) => {
+        console.log(error);
+      },
+    });
   }
 
   onAddActivity(): void {
@@ -37,6 +40,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   onConfirmDelete(id: number): void {
-    console.log('onConfirmDelete', id)
+    console.log('onConfirmDelete', id);
   }
 }

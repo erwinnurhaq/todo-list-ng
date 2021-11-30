@@ -22,7 +22,7 @@ export interface ActivityGroup {
 }
 
 export interface ActivityDetail extends Activity {
-  todo_items: Todo[]
+  todo_items: Todo[];
 }
 
 export interface ActivityGroupUpdate extends Activity {
@@ -36,3 +36,11 @@ export interface TodoUpdate extends Todo {
 }
 
 export interface Empty {}
+
+export interface TaskForm {
+  activity_group_id?: number | string;
+  id?: number;
+  is_active?: number | boolean;
+  priority: Priorities;
+  title: string;
+}

@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getActivities(): void {
+    this.activitiesSub?.unsubscribe();
     this.activitiesSub = this.httpService.getActivities().subscribe({
       next: (result) => {
         this.activities = result;
@@ -36,7 +37,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   onAddActivity(): void {
-    console.log('onAddActivity');
+    this.isLoading = true;
+    this.activitiesSub?.unsubscribe();
+    this.activitiesSub = this.httpService.postActivity().subscribe({
+      next: (result) => {
+        this.getActivities()
+      },
+      error: (error: any) => {
+        console.log(error);
+      },
+    })
   }
 
   onConfirmDelete(id: number): void {

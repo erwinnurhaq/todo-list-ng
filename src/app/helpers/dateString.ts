@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class DateString {
-  private MONTH_LONG = [
+  private _month = [
     'Januari',
     'Februari',
     'Maret',
@@ -22,7 +22,7 @@ export class DateString {
   format(dateString: string): string {
     const date = new Date(dateString);
     const formattedDate = `${String(date.getDate()).padStart(2, '0')} ${
-      this.MONTH_LONG[date.getMonth()]
+      this._month[date.getMonth()]
     } ${date.getFullYear()}`;
     return formattedDate;
   }

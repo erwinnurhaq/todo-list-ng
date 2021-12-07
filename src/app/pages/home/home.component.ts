@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.activitiesSub?.unsubscribe();
     this.activitiesSub = this.httpService.postActivity().subscribe({
-      next: (result) => {
+      next: () => {
         this.getActivities()
       },
       error: (error: any) => {

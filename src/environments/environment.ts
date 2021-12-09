@@ -7,6 +7,7 @@ export const environment = {
   baseAPIURL: 'https://todo.api.devcode.gethired.id'
 };
 
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

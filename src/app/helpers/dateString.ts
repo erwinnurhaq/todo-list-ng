@@ -21,9 +21,7 @@ export class DateString {
 
   format(dateString: string): string {
     const date = new Date(dateString);
-    const formattedDate = `${String(date.getDate()).padStart(2, '0')} ${
-      this._month[date.getMonth()]
-    } ${date.getFullYear()}`;
+    const formattedDate = `${String(date.getDate()).padStart(2, '0')} ${this._month[date.getMonth()]} ${date.getFullYear()}`;
     return formattedDate;
   }
 }
